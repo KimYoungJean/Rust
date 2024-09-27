@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public Define.PlayerState playerState { get; set; } = Define.PlayerState.Idle;
+    public Define.PlayerState playerState { get; set ; } = Define.PlayerState.Idle;
 
     private void Awake()
     {
