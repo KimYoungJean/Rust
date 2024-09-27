@@ -1,10 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
     private Animator animator;  // 애니메이터 컴포넌트
+
+    private bool isCrouch;
+    private bool isWalk;
+    private bool isRun;
+    private bool isJump;
+
+    private float xDir;
+    private float yDir;
+
+
+    float horizontal;
+    float vertical;
 
 
     private void Start()
@@ -15,37 +28,53 @@ public class AnimationController : MonoBehaviour
     }
     private void Update()
     {
-        
-        
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
 
-        if (animator == null)
+        
+        switch(GameManager.instance.playerState)
         {
-            return;
-        }
-
-        switch (GameManager.instance.playerState)
-        {
-            case Define.PlayerState.Crouch:
-                animator.Play("Crouch");
+            case Define.PlayerState.Idle:
+                isCrouch = false;
+                isWalk = false;
+                isRun = false;
+                isJump = false;
                 break;
             case Define.PlayerState.Walk:
-                animator.Play("Walk");
+                isCrouch = false;
+                isWalk = true;
+                isRun = false;
+                isJump = false;
                 break;
             case Define.PlayerState.Run:
-                animator.Play("Run");
+                isCrouch = false;
+                isWalk = false;
+                isRun = true;
+                isJump = false;
                 break;
-            case Define.PlayerState.Idle:                
-                animator.Play("Idle");
+            case Define.PlayerState.Crouch:
+                isCrouch = true;
+                isWalk = false;
+                isRun = false;
+                isJump = false;
                 break;
-
-
+            case Define.PlayerState.Jump:
+                isCrouch = false;
+                isWalk = false;
+                isRun = false;
+                isJump = true;
+                break;
         }
 
+        animator.SetBool("isCrouch", isCrouch);
+        animator.SetBool("isWalk", isWalk);
+        animator.SetBool("isRun", isRun);
+        animator.SetBool("isJump", isJump);
 
 
+        animator.SetFloat("xDir", horizontal);
+        animator.SetFloat("yDir", vertical);
     }
 
-
-
-
+    
 }

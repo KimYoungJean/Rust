@@ -9,7 +9,8 @@ public class Define
         Idle,
         Crouch,
         Walk,
-        Run
+        Run,
+        Jump
     }
     
 }
