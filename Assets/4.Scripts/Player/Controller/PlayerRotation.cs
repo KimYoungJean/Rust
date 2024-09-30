@@ -1,10 +1,11 @@
 using Unity.Mathematics;
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerRotation : MonoBehaviour
+public class PlayerRotation : MonoBehaviourPunCallbacks
 {
     public Transform body;  // 캐릭터의 몸 부분    
-    public Transform head;  // 캐릭터의 머리 부분    
+    public Transform head;  // 캐릭터의 머리 부분                                
     public float sensitivity = 1f;  // 마우스 감도
     private float xRotation = 0f;  // 머리의 X축 회전값
 
@@ -22,6 +23,11 @@ public class PlayerRotation : MonoBehaviour
 
     private void Update()
     {
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
+        {
+            return;
+        }
+
         currentY = body.position.y + 1.8f;
         targetY = body.position.y + 0.9f;
 

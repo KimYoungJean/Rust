@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Photon.Pun;
 
-public class AnimationController : MonoBehaviour
+public class AnimationController : MonoBehaviourPunCallbacks
 {
     private Animator animator;  // 애니메이터 컴포넌트
 
@@ -28,6 +29,11 @@ public class AnimationController : MonoBehaviour
     }
     private void Update()
     {
+        if (PhotonNetwork.IsConnected && !photonView.IsMine)
+        {
+            return;
+        }
+
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
