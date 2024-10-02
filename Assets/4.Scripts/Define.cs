@@ -13,4 +13,10 @@ public class Define
         Jump
     }
     
+    public enum PlayerAction
+    {
+        None,
+        Attack,
+        Skill
+    }
 }

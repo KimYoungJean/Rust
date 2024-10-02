@@ -3349,15 +3349,17 @@ GameObject:
   - component: {fileID: 701148229819106791}
   - component: {fileID: 9146315979135587245}
   - component: {fileID: 1177575619042644767}
-  - component: {fileID: 1025656890}
   - component: {fileID: 1025656895}
+  - component: {fileID: 1025656890}
   - component: {fileID: 1025656896}
   - component: {fileID: 8404785082570361514}
   - component: {fileID: 1224088074}
   - component: {fileID: 2363850800224051813}
+  - component: {fileID: 5874360232789783521}
+  - component: {fileID: 8396282935363697126}
   m_Layer: 0
   m_Name: Jhow_Customize_Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3431,21 +3433,6 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.8, z: 0}
---- !u!114 &1025656890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5866959415034337934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeb475e4650e1d43bc3acb10cd44809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 7435717141331421341}
-  head: {fileID: 1974021095}
-  sensitivity: 1
 --- !u!114 &1025656895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,6 +3448,21 @@ MonoBehaviour:
   speed: 2
   rb: {fileID: 0}
   body: {fileID: 7435717141331421341}
+--- !u!114 &1025656890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866959415034337934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeb475e4650e1d43bc3acb10cd44809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 7435717141331421341}
+  head: {fileID: 1974021095}
+  sensitivity: 1
 --- !u!114 &1025656896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3528,6 +3530,33 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &5874360232789783521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866959415034337934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c8ada7fd267c4d9b11434e0710851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRange: 1.5
+  AttackDamage: 10
+--- !u!114 &8396282935363697126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866959415034337934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c30bec0f5cb9b47b818d9aeac470aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &5919502476991547629
 GameObject:
   m_ObjectHideFlags: 0

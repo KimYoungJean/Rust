@@ -37,8 +37,8 @@ public class AnimationController : MonoBehaviourPunCallbacks
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        
-        switch(GameManager.instance.playerState)
+     
+        switch (GameManager.instance.playerState)
         {
             case Define.PlayerState.Idle:
                 isCrouch = false;
@@ -72,6 +72,8 @@ public class AnimationController : MonoBehaviourPunCallbacks
                 break;
         }
 
+
+       
         animator.SetBool("isCrouch", isCrouch);
         animator.SetBool("isWalk", isWalk);
         animator.SetBool("isRun", isRun);
