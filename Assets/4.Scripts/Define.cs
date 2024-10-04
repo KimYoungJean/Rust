@@ -13,10 +13,13 @@ public class Define
         Jump
     }
     
-    public enum PlayerAction
+    public enum Weapon
     {
+        Punch,
+        Gun,
+        Pistol,
+        Dagger,
         None,
-        Attack,
         Skill
     }
 }
